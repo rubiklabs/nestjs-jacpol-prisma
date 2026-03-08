@@ -1,0 +1,38 @@
+// JACPoL policy storage for @rubiklabs/nestjs-jacpol-prisma
+// Run: npx prisma generate
+
+// Add these models to your Prisma schema, then run: npx prisma generate
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PolicySet {
+  id        String   @id
+  target    Json?
+  algorithm String?
+  priority  Int?
+  obligation Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  policies  Policy[]
+}
+
+model Policy {
+  id           String   @id
+  policySetId String
+  policySet   PolicySet @relation(fields: [policySetId], references: [id], onDelete: Cascade)
+  target      Json?
+  rules       Json      // Rule[] as JSON
+  algorithm   String?
+  priority    Int?
+  obligation  Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([policySetId])
+}

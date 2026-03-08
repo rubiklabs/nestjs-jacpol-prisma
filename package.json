@@ -1,0 +1,28 @@
+{
+  "name": "@rubiklabs/nestjs-jacpol-prisma",
+  "version": "0.1.0",
+  "description": "Prisma adapter for @rubiklabs/nestjs-jacpol",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "prisma"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prisma:generate": "prisma generate --schema=./prisma/schema.prisma"
+  },
+  "peerDependencies": {
+    "@rubiklabs/nestjs-jacpol": "*",
+    "@prisma/client": "^5.0.0",
+    "@nestjs/common": "^10.0.0"
+  },
+  "devDependencies": {
+    "@rubiklabs/nestjs-jacpol": "*",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.0.0",
+    "prisma": "^5.0.0"
+  }
+}
