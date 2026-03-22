@@ -1,0 +1,10 @@
+src/
+test/
+tsconfig.json
+tsconfig.build.json
+jest.config.js
+.gitignore
+.git/
+node_modules/
+*.spec.ts
+*.spec.js

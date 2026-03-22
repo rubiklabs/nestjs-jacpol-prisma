@@ -1,28 +1,51 @@
 {
   "name": "@rubiklabs/nestjs-jacpol-prisma",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Prisma adapter for @rubiklabs/nestjs-jacpol",
+  "license": "MIT",
+  "author": "Rubiklabs",
+  "homepage": "https://github.com/rubiklabs/nestjs-jacpol-prisma#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubiklabs/nestjs-jacpol-prisma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rubiklabs/nestjs-jacpol-prisma/issues"
+  },
+  "keywords": [
+    "nestjs",
+    "prisma",
+    "jacpol",
+    "abac",
+    "xacml",
+    "authorization",
+    "access-control",
+    "policy"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "prisma"],
+  "files": ["dist", "prisma", "LICENSE"],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma"
   },
   "peerDependencies": {
-    "@rubiklabs/nestjs-jacpol": "*",
-    "@prisma/client": "^5.0.0",
-    "@nestjs/common": "^10.0.0"
+    "@rubiklabs/nestjs-jacpol": "^1.0.1",
+    "@prisma/client": "^7.5.0",
+    "@nestjs/common": "^11.1.17"
   },
   "devDependencies": {
-    "@rubiklabs/nestjs-jacpol": "*",
-    "@types/jest": "^29.0.0",
-    "@types/node": "^20.0.0",
-    "jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "typescript": "^5.0.0",
-    "prisma": "^5.0.0"
+    "@nestjs/common": "^11.1.17",
+    "@prisma/client": "^7.5.0",
+    "@rubiklabs/nestjs-jacpol": "^1.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.5.0",
+    "jest": "^30.3.0",
+    "prisma": "^7.5.0",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
   }
 }
